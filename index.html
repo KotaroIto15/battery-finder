@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Finder Program</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="bg-primary text-center py-2">
+        <h1 class="text-light">Battery Finder Program</h1>
+    </div>
+
+    <div id="container" class="container col-10">
+        <div id="brand" class="my-3">
+            <p>Step1: Select your brand</p>
+            <select id="brand-name" name="brand-name">
+                <option value="Cakon">Cakon</option>
+                <option value="Go MN">Go MN</option>
+                <option value="VANY">VANY</option>
+            </select>
+        </div>
+
+        <div id="model" class="my-3">
+            <p>Step 2: Select your model</p>
+            <select id="model-name">
+
+            </select>
+        </div>
+
+        <div id="power" class="my-3">
+            <p>Step 3: Input accessory power consumption</p>
+            <input id="power-input" type="text" placeholder="enter integer value" value="55">
+        </div>
+
+        <div id="battery" class="my-3">
+            <p>Step 4: Choose your battery</p>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
