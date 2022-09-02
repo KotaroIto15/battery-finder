@@ -20,6 +20,7 @@
         <div id="brand" class="my-3">
             <p>Step1: Select your brand</p>
             <select id="brand-name" name="brand-name">
+                <option value="select">Select</option>
                 <option value="Cakon">Cakon</option>
                 <option value="Go MN">Go MN</option>
                 <option value="VANY">VANY</option>
@@ -29,13 +30,13 @@
         <div id="model" class="my-3">
             <p>Step 2: Select your model</p>
             <select id="model-name">
-
+                <option value="select">Select</option>
             </select>
         </div>
 
         <div id="power" class="my-3">
             <p>Step 3: Input accessory power consumption</p>
-            <input id="power-input" type="text" placeholder="enter integer value" value="55">
+            <input id="power-input" type="number" placeholder="enter integer value" min="0" max="100">
         </div>
 
         <div id="battery" class="my-3">
@@ -45,6 +46,8 @@
             </div>
         </div>
     </div>
+
+    <script src="battery.js" async></script>
 </body>
 
 </html>
