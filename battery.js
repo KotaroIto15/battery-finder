@@ -1,17 +1,21 @@
 class Model {
+    // consturct a model object with the given model name (string) and power (int)
     constructor(modelName, power) {
         this.modelName = modelName;
         this.power = power;
     }
 
+    // returns its brand name
     getBrandName() {
         return this.brand;
     }
 
+    // returns its model name
     getModelName() {
         return this.modelName;
     }
 
+    // returns its power value
     getPower() {
         return this.power;
     }
@@ -26,6 +30,8 @@ const brand = document.getElementById("brand-name");
 const model = document.getElementById("model-name");
 const powerInput = document.getElementById("power-input");
 
+// MODIFIES: model
+// EFFECTS: creates a new option tag, assigns it a proper description and value, and appends it to HTML.
 function addOption(inner, value) {
     let option = document.createElement("option");
     option.innerHTML = inner;
@@ -33,24 +39,39 @@ function addOption(inner, value) {
     model.append(option);
 }
 
+// REQUIRES: brandName is one of the options chosen fron brand section
+// MODIFIES: model
+// EFFECTS:  given the brandName, retrieves the associated array of models and renders them as options.
 function displayModel(brandName) {
+    if (brandName == "select") return;
+
     let models = modelMap.get(brandName);
     models.forEach(function(ele){
         addOption(ele.getModelName(), ele.getPower());
     });
 }
 
+// updates the total power input needed by taking the sum of the model power and accessories power.
+function calculateTotalPower() {
+    if (powerInput.value.length != 0 && model.value != "select") {
+        // by putting "+" sign before the variable, it converts a string into a number.
+        let totalPower = +(powerInput.value) + +model.value;
+        console.log(totalPower);
+    }
+}
+
+// When brand name is selected, list off all the model options associated with the brand
 brand.addEventListener("change", function(event){
     model.innerHTML = "";
     addOption("Select", "select");
 
     let name = event.currentTarget.value;
-    if (name !== "select") displayModel(name);
+    displayModel(name);
 });
 
-powerInput.addEventListener("change", function(){
-    console.log(model.value);
-});
+// When either model option or power input is changed, updates the total power needed.
+model.addEventListener("change", calculateTotalPower);
+powerInput.addEventListener("change", calculateTotalPower);
 
 
 
