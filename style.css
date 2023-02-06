@@ -1,0 +1,11 @@
+input {
+    width: 200px;
+}
+
+.step {
+    color: black;
+    font-family: 'Courier';
+    font-size: 3vw;
+    letter-spacing: 0.005px;
+    word-spacing: - .1ch;
+}
